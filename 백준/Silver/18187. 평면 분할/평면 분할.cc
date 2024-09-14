@@ -1,26 +1,20 @@
 #include <iostream>
+
 using namespace std;
 
 int main() {
-    int N, c = 0, r = 2, add = 2;
-    bool odd = false;
+    long long N;
     cin >> N;
 
-    while (c != N-1) {
-        r += add;
-        c++;
-        if (odd) {
-            odd = false;
-            add++;
-            continue;
-        }
-        if (add % 2 == 1) {
-            odd = true;
-            continue;
-        }
-        add++;
-    }
+    long long A = N / 3;
+    long long Rest = N - A;
+    long long B = Rest / 2;
+    long long C = Rest - B;
 
-    cout << r << endl;
+    long long I = A * (B + C) + B * C;
+    long long R = N + 1 + I;
+
+    cout << R << endl;
+
     return 0;
 }
